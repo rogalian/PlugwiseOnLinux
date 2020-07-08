@@ -64,10 +64,10 @@ class Plugwise:
         return format % value
 
     def SendCommandInit(self, command):
-        self.serial.write(self.HEADER + command + \ self.ENDLINE)
+        self.serial.write(self.HEADER + command + self.ENDLINE)
 
     def SendCommand(self, command):
-        self.serial.write(self.HEADER + command + self.GetCRC16(command) + \ self.ENDLINE)
+        self.serial.write(self.HEADER + command + self.GetCRC16(command) + self.ENDLINE)
 
     def GetResult(self, responsecode):
         readbytes = 0
@@ -127,7 +127,7 @@ def main():
 	   macaddress = raw_input()
 	   macaddressidentity = "000D6F00003" + macaddress
 	   command = "MASTER"
-    elif arg == "i":
+    elif arg == "s":
 	   print 
 	   print "Installation Circle"
 	   print "Step 1 :"
